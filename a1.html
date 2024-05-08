@@ -1,0 +1,999 @@
+Bootstrap:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Name</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Add your customji8 styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .jumbotron {
+      background-color: #f8f9fa;
+    }
+    /* Add more custom styles as needed */
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Company Name</a>
+      
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1>Welcome to Company Name</h1>
+      <p class="lead">We provide excellent services to meet your needs.</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero id hendrerit condimentum.</p>
+      <!-- Add more content as needed -->
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Service 1</h5>
+              <p class="card-text">Description of service 1.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Service 2</h5>
+              <p class="card-text">Description of service 2.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Service 3</h5>
+              <p class="card-text">Description of service 3.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+      <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Get In Touch</h5>
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p>&copy; 2024 Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+Quiz:
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Simple Quiz</h1>
+
+    <div id="quiz">
+        <!-- Quiz questions will be loaded here -->
+    </div>
+
+    <button id="submit">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["London", "Paris", "Rome", "Berlin"],
+                answer: "Paris"
+            },
+            {
+                question: "Who is the author of 'To Kill a Mockingbird'?",
+                options: ["Harper Lee", "Mark Twain", "J.K. Rowling", "Stephen King"],
+                answer: "Harper Lee"
+            }
+        ];
+
+        $(document).ready(function() {
+            loadQuiz();
+
+            $('#submit').click(function() {
+                showResult();
+            });
+        });
+
+        function loadQuiz() {
+            questions.forEach(function(question, index) {
+                $('#quiz').append('<h3>' + question.question + '</h3>');
+                question.options.forEach(function(option) {
+                    $('#quiz').append('<input type="radio" name="question' + index + '" value="' + option + '"> ' + option + '<br>');
+                });
+            });
+        }
+
+        function showResult() {
+            let score = 0;
+            questions.forEach(function(question, index) {
+                const selectedOption = $('input[name=question' + index + ']:checked').val();
+                if (selectedOption === question.answer) {
+                    score++;
+                }
+            });
+            $('#result').text('You scored ' + score + ' out of ' + questions.length);
+        }
+    </script>
+</body>
+</html>
+
+
+Todo:
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Todo List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="TodoController">
+        <h1>Todo List</h1>
+
+        <input type="text" ng-model="newTask" placeholder="Enter task">
+        <button ng-click="addTask()">Add Task</button>
+
+        <ul>
+            <li ng-repeat="task in tasks">
+                {{ task }}
+                <button ng-click="removeTask($index)">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        angular.module('todoApp', [])
+        .controller('TodoController', function($scope) {
+            $scope.tasks = [];
+
+            $scope.addTask = function() {
+                if ($scope.newTask.trim() !== '') {
+                    $scope.tasks.push($scope.newTask);
+                    $scope.newTask = '';
+                }
+            };
+
+            $scope.removeTask = function(index) {
+                $scope.tasks.splice(index, 1);
+            };
+        });
+    </script>
+</body>
+</html>--------------------------------------------------------------------------------------------------------
+Currency Convertor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition of Two Numbers</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1>Addition of Two Numbers</h1>
+
+  <label for="num1">First Number:</label>
+  <input type="number" id="num1">
+
+  
+
+  <button id="calculate">Calculate Sum</button>
+
+  <p id="result1"></p>
+  <p id="result2"></p>
+  <p id="result3"></p>
+
+  <script>
+    $(document).ready(function(){
+      $('#calculate').click(function(){
+        var num1 = parseFloat($('#num1').val());
+        
+        
+        var USD = num1 *83.47;
+        var E= USD *0.93;
+        var B=USD*0.796
+        
+        $('#result1').text('The USD is: ' + USD);
+        $('#result2').text('The EURO is: ' + E);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+Calculator.angularjs
+
+<!DOCTYPE html>
+<html lang="en" ng-app="calculatorApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="CalculatorController">
+        <h1>Simple Calculator</h1>
+
+        <input type="number" ng-model="num1">
+        <select ng-model="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" ng-model="num2">
+        <button ng-click="calculate()">Calculate</button>
+
+        <p>Result: {{ result }}</p>
+    </div>
+
+    <script>
+        angular.module('calculatorApp', [])
+        .controller('CalculatorController', function($scope) {
+            $scope.calculate = function() {
+                switch ($scope.operator) {
+                    case '+':
+                        $scope.result = $scope.num1 + $scope.num2;
+                        break;
+                    case '-':
+                        $scope.result = $scope.num1 - $scope.num2;
+                        break;
+                    case '*':
+                        $scope.result = $scope.num1 * $scope.num2;
+                        break;
+                    case '/':
+                        $scope.result = $scope.num1 / $scope.num2;
+                        break;
+                    default:
+                        $scope.result = 'Invalid operator';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+
+Shopping.card:
+
+<!DOCTYPE html>
+<html lang="en" ng-app="shoppingCartApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="CartController">
+        <h1>Shopping Cart</h1>
+
+        <div ng-if="cart.length === 0">
+            <p>Your cart is empty</p>
+        </div>
+
+        <div ng-if="cart.length > 0">
+            <ul>
+                <li ng-repeat="item in cart">
+                    {{ item.name }} - ${{ item.price }}
+                    <button ng-click="removeItem($index)">Remove</button>
+                </li>
+            </ul>
+
+            <p>Total: ${{ getTotal() }}</p>
+
+            <button ng-click="checkout()">Checkout</button>
+        </div>
+
+        <hr>
+
+        <h2>Products</h2>
+        <ul>
+            <li ng-repeat="product in products">
+                {{ product.name }} - ${{ product.price }}
+                <button ng-click="addItem(product)">Add to Cart</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        angular.module('shoppingCartApp', [])
+        .controller('CartController', function($scope) {
+            $scope.cart = [];
+            $scope.products = [
+                { name: 'Product 1', price: 10 },
+                { name: 'Product 2', price: 20 },
+                { name: 'Product 3', price: 30 }
+            ];
+
+            $scope.addItem = function(product) {
+                $scope.cart.push(product);
+            };
+
+            $scope.removeItem = function(index) {
+                $scope.cart.splice(index, 1);
+            };
+
+            $scope.getTotal = function() {
+                let total = 0;
+                $scope.cart.forEach(function(item) {
+                    total += item.price;
+                });
+                return total;
+            };
+
+            $scope.checkout = function() {
+                // Implement checkout functionality here
+                alert('Checkout successful!');
+                $scope.cart = [];
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+Firstname and last name
+
+<!DOCTYPE html>
+<html lang="en" ng-app="fullNameApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="NameController">
+        <h1>Enter Your First and Last Name</h1>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" ng-model="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" ng-model="lastName">
+
+        <p>Your full name in uppercase: {{ getFullName() }}</p>
+    </div>
+
+    <script>
+        angular.module('fullNameApp', [])
+        .controller('NameController', function($scope) {
+            $scope.firstName = '';
+            $scope.lastName = '';
+
+            $scope.getFullName = function() {
+                return ($scope.firstName + ' ' + $scope.lastName).toUpperCase();
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+Bmi calculation:
+Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BMI Calculator </title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form action="/calculate" method="get">
+        <label for="weight">Weight (kg): </label>
+        <input type="text" name="weight" id="weight" required>
+        <br>
+        <label for="height">Height (m): </label>
+        <input type="text" name="height" id="height" required>
+        <br>
+        <button type="submit">Calculate BMI</button>
+    </form>
+        
+</body>
+</html>
+
+App.js
+// Import necessary modules
+const http = require('http');
+const url = require('url');
+const fs = require('fs');
+
+// Create a server
+const server = http.createServer((req, res) => {
+  // Parse the request URL
+  const parsedUrl = url.parse(req.url, true);
+
+  // Get the pathname from the parsed URL
+  const pathname = parsedUrl.pathname;
+ console.log(pathname);
+  // Handle different routes
+  if (pathname === '/') {
+    // Display the BMI calculator form
+    res.writeHead(200, { 'Content-Type': 'text/html' });  
+    fs.createReadStream('index.html').pipe(res);
+    
+  } else if (pathname === '/calculate') {
+    // Calculate BMI
+    const queryParams = parsedUrl.query;
+    const weight = parseFloat(queryParams.weight);
+    const height = parseFloat(queryParams.height);
+
+    const bmi = weight / Math.pow(height, 2);
+
+    // Send response with calculated BMI
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(`<h1>Your BMI is: ${bmi.toFixed(2)}</h1>`);
+    res.end();
+  } else {
+    // Handle unknown routes
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.write('<h1>404 Not Found</h1>');
+    res.end();
+  }
+});
+
+// Start the server
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+Survey
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Survey</title>
+</head>
+<body>
+    <h1>Employee Survey</h1>
+    <form action="/survey" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="department">Department:</label><br>
+        <input type="text" id="department" name="department"><br>
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+App.js
+
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+// Middleware to parse JSON and URL-encoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Route to render survey form
+app.get('/survey', (req, res) => {
+    res.sendFile(__dirname + '/survey.html');
+});
+
+// Route to handle form submission
+app.post('/survey', (req, res) => {
+    const { name, department, feedback } = req.body;
+    // Here you can save the survey data to a database or perform other actions
+    res.send(`Survey submitted successfully!\nName: ${name}\nDepartment: ${department}\nFeedback: ${feedback}`);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+Employee payroll:
+App.js:
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+
+// MongoDB connection
+mongoose.connect('mongodb://localhost/employee-payroll', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error(err));
+
+// Define Employee Schema
+const employeeSchema = new mongoose.Schema({
+    name: String,
+    salary: Number,
+    // Add more fields as needed
+});
+
+const Employee = mongoose.model('Employee', employeeSchema);
+
+// Routes
+app.get('/employees', async (req, res) => {
+    try {
+        const employees = await Employee.find();
+        res.json(employees);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+app.post('/employees', async (req, res) => {
+    const employee = new Employee({
+        name: req.body.name,
+        salary: req.body.salary,
+        // Add more fields as needed
+    });
+
+    try {
+        const newEmployee = await employee.save();
+        res.status(201).json(newEmployee);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+Html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll System</title>
+</head>
+<body>
+    <h1>Employee Payroll System</h1>
+    
+    <h2>Add New Employee</h2>
+    <form id="addEmployeeForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required>
+        <br>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <hr>
+
+    <h2>Employees</h2>
+    <ul id="employeeList"></ul>
+
+    <script>
+        // Fetch all employees and display them
+        async function fetchEmployees() {
+            const response = await fetch('/employees');
+            const data = await response.json();
+            const employeeList = document.getElementById('employeeList');
+
+            employeeList.innerHTML = '';
+
+            data.forEach(employee => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Name: ${employee.name}, Salary: ${employee.salary}`;
+                employeeList.appendChild(listItem);
+            });
+        }
+
+        // Add new employee
+        document.getElementById('addEmployeeForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const salary = document.getElementById('salary').value;
+
+            const response = await fetch('/employees', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, salary })
+            });
+
+            if (response.ok) {
+                alert('Employee added successfully');
+                fetchEmployees();
+            } else {
+                alert('Failed to add employee');
+            }
+        });
+
+        // Fetch employees on page load
+        fetchEmployees();
+    </script>
+</body>
+</html>
+
+1.	Develop an application to calculate average mark of students in a semester using Node.JS framework
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Mark Calculator</title>
+</head>
+<body>
+    <h1>Average Mark Calculator</h1>
+    
+    <h2>Calculate Average Mark</h2>
+    <form id="calculateAverageForm">
+        <label for="marks">Enter marks separated by commas:</label>
+        <input type="text" id="marks" name="marks" required>
+        <br>
+        <button type="submit">Calculate Average</button>
+    </form>
+
+    <h2>Result</h2>
+    <p id="averageMark"></p>
+
+    <script>
+        document.getElementById('calculateAverageForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const marksInput = document.getElementById('marks').value;
+            const marksArray = marksInput.split(',').map(mark => Number(mark.trim()));
+
+            const response = await fetch('/calculate-average', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ marks: marksArray })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('averageMark').textContent = `Average Mark: ${data.averageMark}`;
+            } else {
+                document.getElementById('averageMark').textContent = 'Error calculating average mark';
+            }
+        });
+    </script>
+</body>
+</html>
+server.js
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
+
+// Route for calculating average mark
+app.post('/calculate-average', (req, res) => {
+    const marks = req.body.marks;
+    if (!marks || !Array.isArray(marks)) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+
+    const totalMarks = marks.reduce((acc, mark) => acc + mark, 0);
+    const averageMark = totalMarks / marks.length;
+
+    res.json({ averageMark });
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+2.	Develop an application to find the area of any shape using Node.JS
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<body>
+    <h1>Area Calculator</h1>
+    
+    <h2>Calculate Area</h2>
+    <form id="calculateAreaForm" method="POST" action="/calculate-area">
+        <label for="shape">Select Shape:</label>
+        <select id="shape" name="shape">
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+        </select>
+        <br>
+        <label for="dimensions">Enter Dimensions (comma-separated):</label>
+        <input type="text" id="dimensions" name="dimensions" required>
+        <br>
+        <button type="submit">Calculate Area</button>
+    </form>
+
+    <h2>Result</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('calculateAreaForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const shape = document.getElementById('shape').value;
+            const dimensions = document.getElementById('dimensions').value.split(',').map(val => Number(val.trim()));
+
+            const response = await fetch('/calculate-area', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ shape, dimensions })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('result').textContent = `Area of ${data.shape}: ${data.area}`;
+            } else {
+                document.getElementById('result').textContent = 'Error calculating area';
+            }
+        });
+    </script>
+</body>
+</html>
+
+Index.js
+// index.js
+
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve HTML file
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+// Route for calculating area
+app.post('/calculate-area', (req, res) => {
+    const { shape, dimensions } = req.body;
+
+    if (!shape || !dimensions || !Array.isArray(dimensions)) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+
+    let area;
+
+    switch (shape.toLowerCase()) {
+        case 'rectangle':
+            if (dimensions.length !== 2) {
+                return res.status(400).json({ error: 'Invalid dimensions for rectangle' });
+            }
+            const [length, width] = dimensions;
+            area = length * width;
+            break;
+        case 'triangle':
+            if (dimensions.length !== 2) {
+                return res.status(400).json({ error: 'Invalid dimensions for triangle' });
+            }
+            const [base, height] = dimensions;
+            area = 0.5 * base * height;
+            break;
+        case 'circle':
+            if (dimensions.length !== 1) {
+                return res.status(400).json({ error: 'Invalid dimensions for circle' });
+            }
+            const [radius] = dimensions;
+            area = Math.PI * radius * radius;
+            break;
+        default:
+            return res.status(400).json({ error: 'Unsupported shape' });
+    }
+
+    res.json({ shape, area });
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+3.	Develop an application to find the factorial of given input using Node.JS
+
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+<meta charset=”UTF-8”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+<title>Factorial Calculator</title>
+</head>
+<body>
+<h1>Factorial Calculator</h1>
+<label for=”number”>Enter a number:</label>
+<input type=”number” id=”number”>
+<button onclick=”calculateFactorial()”>Calculate Factorial</button>
+<p id=”result”></p>
+<script src=”factorial.js”></script>
+</body>
+</html>
+Function calculateFactorial() {
+// Get the input value
+Var numberInput = document.getElementById(“number”).value;
+// Convert the input value to an integer
+Var number = parseInt(numberInput);
+// Validate the input
+If (isNaN(number)) {
+Alert(“Please enter a valid number.”);
+Return;
+}
+// Calculate the factorial
+Var factorial = 1;
+For (var I = 1; I <= number; i++) {
+Factorial *= I;
+}
+// Display the result
+Document.getElementById(“result”).innerText = “Factorial of “ + number + “ is: “ + factorial;}
+
+4.	Develop a Feedback form for a technical event conducted in an engineering college to demonstrate GET/POST request method in Express JS
+
+// index.js
+
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
+// Serve feedback form
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+// Handle form submission
+app.post('/submit-feedback', (req, res) => {
+    const { name, email, feedback } = req.body;
+    // Here you can process the feedback (save to database, etc.)
+    console.log(`Received feedback: Name - ${name}, Email - ${email}, Feedback - ${feedback}`);
+    res.send('Feedback received successfully!');
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Technical Event Feedback Form</h1>
+    <form action="/submit-feedback" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        <br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
